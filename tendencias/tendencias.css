@@ -1,0 +1,172 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+header,
+main,
+footer,
+div,
+h1,
+h2,
+h3,
+ul,
+li,
+span,
+input,
+button {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* -- HEADER --*/
+
+.header {
+    display: flex;
+    height: 10dvh;
+    background-color: #2b90dd;
+    font-size: 1.6rem;
+    box-shadow: 0 1px 6px 4px #222;
+}
+
+.header-nav {
+    padding: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 70px 0 50px;
+
+}
+
+.header-nav-title i,
+span {
+    color: #111;
+    font-size: 1.8rem;
+}
+
+.header-nav-title:hover {
+    animation: move .3s infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.header-nav-list {
+    display: flex;
+    gap: 50px;
+}
+
+.header-nav-list-item {
+    padding: 5px;
+    border-radius: 15px;
+    transition: box-shadow .12s ease-in;
+}
+
+.header-nav-list-item a {
+    color: white;
+}
+
+.header-nav-list-item-btn {
+    background-color: #111;
+    border-radius: 10px;
+}
+
+.header-nav-list-item-btn:hover {
+    background-color: transparent;
+}
+
+.header-nav-list-item:hover {
+    box-shadow: 0 0 5px #333;
+}
+
+
+/*--MAIN--*/
+
+/* Main content styles */
+body h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.listado-tendencia {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.listado-tendencia li {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+}
+
+.listado-tendencia img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    /* Agregamos la transición para la opacidad, lo agregue pero nose si queda bien */
+}
+
+.listado-tendencia li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.listado-tendencia li img:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+    /* Cambiamos la opacidad al pasar el mouse por encima, por si quieren sacarlo */
+}
+
+
+
+/* --- FOOTER ----*/
+
+footer {
+    background-color: #fff;
+    box-shadow: 0 0 3px #272727;
+}
+
+.footer__icons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: x-large;
+}
+
+.footer__icons a {
+    color: #272727;
+    user-select: none;
+}
