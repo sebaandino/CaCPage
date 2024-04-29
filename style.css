@@ -343,8 +343,18 @@ h2 {
 /* --- FOOTER ----*/
 
 footer {
-    background-color: #fff;
+    background-image: linear-gradient(90deg, #9995 ,#2b90dd, #9995);
     box-shadow: 0 0 3px #272727;
+    height: clamp(20px,10dvh,1000px);
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.3rem;
+    
+}
+
+footer a{
+    color: #111;
 }
 
 .footer__icons {
