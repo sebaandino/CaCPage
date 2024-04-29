@@ -295,7 +295,7 @@ h2 {
     place-content: center;
     transform: perspective(1200px) rotateY(180deg);
     border-radius: 30px;
-    background-image: linear-gradient(#fff7 , #fff7),url(img/pelicula.jpg);
+    background-color: #fff;
     background-position: center;
 }
 
