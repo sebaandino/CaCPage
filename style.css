@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     box-sizing: border-box;
+    font-family: Raleway;
 }
 
 body,
@@ -16,7 +19,7 @@ span,
 input,
 button,
 a,
-i{
+i {
     margin: 0;
     padding: 0;
 }
@@ -44,8 +47,8 @@ header {
     font-size: 1rem;
     box-shadow: 0 1px 6px 4px #222;
     width: 100%;
-    height: clamp(20px,10dvh,1000px);
-    padding: 0 20px 0 30px ;
+    height: clamp(20px, 10dvh, 1000px);
+    padding: 0 20px 0 30px;
 }
 
 .header-nav {
@@ -55,7 +58,7 @@ header {
 
 .header-logo {
     display: grid;
-    align-content: center ;
+    align-content: center;
     margin-left: 30px;
     width: 152px;
 }
@@ -248,34 +251,122 @@ h2 {
 
 /* seccion peliculas  */
 
+.title-populares {
+    display: grid;
+    place-content: center;
+    margin-top: 30px;
+    font-size: 2rem;
+}
+
+.title-populares h2 {
+    transition: border-bottom .4s ease-in-out;
+
+}
+
+.title-populares:hover h2 {
+    border-bottom: 1px solid #2b90dd;
+}
 
 .peliculas-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     justify-items: center;
+    align-items: center;
     gap: 20px;
     padding-top: 30px;
     margin: 50px 30px;
 }
 
-.card_img img {
-    height: 320px;
-    width: auto;
-    border-radius: 30px;
 
-}
-
-.card{
+.card {
+    /* animacion de entrada  */
     position: relative;
     animation-timeline: view;
     animation: reveal linear both;
     animation-range: entry 70% cover 40%;
     view-timeline-name: --subjectReveal;
     animation-timeline: --subjectReveal;
+    /* fin de animacion  */
+
     border-radius: 30px;
+    
+}
+
+/* --- animacion entrada --- */
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        scale: .5;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.movie{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.card img {
+    height: 280px;
+    width: auto;
+    border-radius: 30px;
+    object-view-box: inset(0%);
+    transition: all .3s ease;
+}
+
+.card:hover img{
+    object-view-box: inset(8% 8% 8% 8%);
+    filter: brightness(1.2) grayscale(50%) drop-shadow(0 0 10px black);
+}
+
+.movie-title{
+    font-size: 1.1rem;
+    color: #2b90dd;
+    text-wrap: pretty;
+    text-align: center;
+}
+
+/* --- FOOTER ----*/
+
+footer {
+    background-image: linear-gradient(90deg, #9995, #2b90dd, #9995);
+    box-shadow: 0 0 3px #272727;
+    height: clamp(20px, 10dvh, 1000px);
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.3rem;
 
 }
 
+footer a {
+    color: white;
+}
+
+.footer__icons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: x-large;
+}
+
+.footer__icons a {
+    color: #272727;
+    user-select: none;
+}
+
+/* --- flip card --- 
 .card_front, .card_back{
     backface-visibility: hidden;
     transition: transform .7s ease-in-out;
@@ -290,7 +381,7 @@ h2 {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 90%;
     display: grid;
     place-content: center;
     transform: perspective(1200px) rotateY(180deg);
@@ -298,10 +389,6 @@ h2 {
     background-color: #fff;
     background-position: center;
 }
-
-/* .back_img{
-    transform: rotateY(180deg);
-} */
 
 .card:hover .card_front{
     transform: perspective(1200px) rotateY(180deg);
@@ -324,49 +411,5 @@ h2 {
 
 .card_back_info span{
     font-size: 1.5rem;
-}
-
-@keyframes reveal {
-    from {
-        opacity: 0;
-        scale: .5;
-    }
-
-    to {
-        opacity: 1;
-        scale: 1;
-    }
-
-}
-
-
-/* --- FOOTER ----*/
-
-footer {
-    background-image: linear-gradient(90deg, #9995 ,#2b90dd, #9995);
-    box-shadow: 0 0 3px #272727;
-    height: clamp(20px,10dvh,1000px);
-    margin-top: 200px;
-    display: flex;
-    justify-content: space-around;
-    font-size: 1.3rem;
-    
-}
-
-footer a{
-    color: white;
-}
-
-.footer__icons {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: x-large;
-}
-
-.footer__icons a {
-    color: #272727;
-    user-select: none;
-}
+} 
+*/
