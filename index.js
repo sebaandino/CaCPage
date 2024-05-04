@@ -17,8 +17,8 @@ fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', option
         const movies = data.results;
         const htmlResponse = movies.map(movie =>
             `
-            <div class="card">
-                <a href="#" class="movie">
+            <div class="card" id="${movie.id}">
+                <a href="#" class="movie" onclick=cargarPelícula(this)>
                     <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="movie poster">
                     <span class="movie-title">${movie.title}</span>
                 </a>
@@ -39,3 +39,13 @@ fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', option
     // al buscar se redirecciona a movie_search.html con el parametro de busqueda en la URL "query"
     window.location.href = `movie_search/movie_search.html?query=${movie_search}`;
 });
+
+// Función para cargar la página HTML con la información de la película
+function cargarPelicula(elementoPelicula) {
+    // Obtener el ID de la película desde el atributo id del elemento de película
+    const movieId = elementoPelicula.id;
+    // Construir la URL de la página HTML que muestra la información de la película
+    const paginaURL = `movieDesc/movieDesc.html?id=${movieId}`;
+    // Redireccionar a la página HTML de la película seleccionada
+    window.location.href = paginaURL;
+}
