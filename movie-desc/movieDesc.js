@@ -11,6 +11,17 @@ console.log('peli a buscar:', query);
 const apiKey = "8abb33cb7535fb63ffe506dd0dfe0021";
 const token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YWJiMzNjYjc1MzVmYjYzZmZlNTA2ZGQwZGZlMDAyMSIsInN1YiI6IjY2MmZlMWMxMWYwMjc1MDEyNzE0ZWFhYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0UWZOlQ4GkikRMacrfn28udDGfQI-HxwufFVSKV0YQg";
 
+
+// Obtener los parámetros de la URL
+const urlParams = new URLSearchParams(window.location.search);
+
+// Obtener el valor del parámetro 'id'
+const movieId = urlParams.get('id');
+
+// Hacer algo con el ID de la película
+console.log('ID de la película:', movieId);
+
+
 const options = {
     method: 'GET',
     headers: {
@@ -19,7 +30,7 @@ const options = {
     }
 };
 
-fetch(`https://api.themoviedb.org/3/movie/1051896`, options)
+fetch(`https://api.themoviedb.org/3/movie/${movieId}`, options)
     .then(response => response.json())
     .then(data => {
     console.log(data);
