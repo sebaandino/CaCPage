@@ -45,7 +45,7 @@ function cargarPelicula(elementoPelicula) {
     // Obtener el ID de la película desde el atributo id del elemento de película
     const movieId = elementoPelicula.id;
     // Construir la URL de la página HTML que muestra la información de la película
-    const paginaURL = `movieDesc/movieDesc.html?id=${movieId}`;
+    const paginaURL = `movie-desc/movie-desc.html?id=${movieId}`;
     // Redireccionar a la página HTML de la película seleccionada
     window.location.href = paginaURL;
 }
