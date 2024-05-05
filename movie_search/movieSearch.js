@@ -1,12 +1,11 @@
-
-// se obtiene la parte de la URL que contiene los parámetros
+// Se obtiene la parte de la URL que contiene los parámetros
 const urlParams = new URLSearchParams(window.location.search);
 
-// se extrae el valor del parametro "query"
+// Se extrae el valor del parámetro "query"
 const query = urlParams.get('query');
 
-// prueba del parametro
-console.log('peli a buscar:', query);
+// Prueba del parámetro
+console.log('Peli a buscar:', query);
 
 const apiKey = "8abb33cb7535fb63ffe506dd0dfe0021";
 const token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YWJiMzNjYjc1MzVmYjYzZmZlNTA2ZGQwZGZlMDAyMSIsInN1YiI6IjY2MmZlMWMxMWYwMjc1MDEyNzE0ZWFhYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0UWZOlQ4GkikRMacrfn28udDGfQI-HxwufFVSKV0YQg";
@@ -34,8 +33,6 @@ fetch(`https://api.themoviedb.org/3/search/movie?query=${query}`, options)
         `)
         .join('');
         document.getElementById('busqueda-container').innerHTML = htmlResponse;
-    })
-    .catch(err => console.error(err));
 
         // Agregar escucha de eventos a los elementos de película después de que se renderizan
         const cards = document.querySelectorAll('.card');
@@ -52,7 +49,7 @@ function cargarPelicula(elementoPelicula) {
     // Obtener el ID de la película desde el atributo id del elemento de película
     const movieId = elementoPelicula.id;
     // Construir la URL de la página HTML que muestra la información de la película
-    const paginaURL = `movie-desc/movie-desc.html?query=${movieId}`;
+    const paginaURL = `../movie-desc/movie-desc.html?query=${movieId}`;
     // Redireccionar a la página HTML de la película seleccionada
     window.location.href = paginaURL;
 }
