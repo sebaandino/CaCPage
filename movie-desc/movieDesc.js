@@ -30,7 +30,7 @@ const options = {
     }
 };
 
-fetch(`https://api.themoviedb.org/3/movie/${movieId}`, options)
+fetch(`https://api.themoviedb.org/3/movie/${query}`, options)
     .then(response => response.json())
     .then(data => {
     console.log(data);
