@@ -1,26 +1,15 @@
 
-// se obtiene la parte de la URL que contiene los parámetros
-const urlParams = new URLSearchParams(window.location.search);
-
-// se extrae el valor del parametro "query"
-const query = urlParams.get('query');
-
-// prueba del parametro
-console.log('peli a buscar:', query);
-
-const apiKey = "8abb33cb7535fb63ffe506dd0dfe0021";
-const token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YWJiMzNjYjc1MzVmYjYzZmZlNTA2ZGQwZGZlMDAyMSIsInN1YiI6IjY2MmZlMWMxMWYwMjc1MDEyNzE0ZWFhYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0UWZOlQ4GkikRMacrfn28udDGfQI-HxwufFVSKV0YQg";
-
-
 // Obtener los parámetros de la URL
 const urlParams = new URLSearchParams(window.location.search);
 
-// Obtener el valor del parámetro 'id'
-const movieId = urlParams.get('id');
+// Obtener el valor del parámetro 'query'
+const query = urlParams.get('query');
 
-// Hacer algo con el ID de la película
-console.log('ID de la película:', movieId);
+// Hacer algo con el parámetro 'query'
+console.log('Parámetro de búsqueda:', query);
 
+const apiKey = "8abb33cb7535fb63ffe506dd0dfe0021";
+const token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YWJiMzNjYjc1MzVmYjYzZmZlNTA2ZGQwZGZlMDAyMSIsInN1YiI6IjY2MmZlMWMxMWYwMjc1MDEyNzE0ZWFhYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0UWZOlQ4GkikRMacrfn28udDGfQI-HxwufFVSKV0YQg";
 
 const options = {
     method: 'GET',
@@ -33,7 +22,7 @@ const options = {
 fetch(`https://api.themoviedb.org/3/movie/${query}`, options)
     .then(response => response.json())
     .then(data => {
-    console.log(data);
+        console.log(data);
 
         const movie = data;
         const roundedVoteAverage = Math.round(movie.vote_average);
@@ -53,4 +42,3 @@ fetch(`https://api.themoviedb.org/3/movie/${query}`, options)
     .catch(error => {
         console.error('Error:', error);
     });
-
