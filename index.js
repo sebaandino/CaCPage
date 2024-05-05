@@ -18,7 +18,7 @@ fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', option
         const htmlResponse = movies.map(movie =>
             `
             <div class="card" id="${movie.id}">
-<a href="#">
+<a href="#" class="movie">
                 <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="movie poster">
                 <span class="movie-title">${movie.title}</span>
 </a>
