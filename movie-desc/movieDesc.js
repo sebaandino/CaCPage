@@ -1,11 +1,9 @@
 
 // Obtener los parámetros de la URL
 const urlParams = new URLSearchParams(window.location.search);
-
 // Obtener el valor del parámetro 'query'
 const query = urlParams.get('query');
-
-// Hacer algo con el parámetro 'query'
+// prueba
 console.log('Parámetro de búsqueda:', query);
 
 const apiKey = "8abb33cb7535fb63ffe506dd0dfe0021";
@@ -26,11 +24,11 @@ fetch(`https://api.themoviedb.org/3/movie/${query}`, options)
 
         const movie = data;
         const roundedVoteAverage = Math.round(movie.vote_average);
-        const htmlResponse = `
+        const htmlResponse = /*html*/ ` 
             <img src="https://image.tmdb.org/t/p/w300/${movie.poster_path}" alt="movie poster" class="p-img">
             <div class="movie-stats">
-                <span class="p-votes"><i class="fab fa fa-star"></i></br>${roundedVoteAverage}/10</span><br>
-                <span class="p-date"><i class="fab fa fa-calendar"></i></br>${movie.release_date}</span><br>
+                <span class="p-votes"><i class="fab fa fa-star"></i>${roundedVoteAverage}/10</span><br>
+                <span class="p-date"><i class="fab fa fa-calendar"></i>${movie.release_date}</span><br>
             </div>
             <div class="movie-info">
                 <h1 class="p-title">${movie.title}</h1>

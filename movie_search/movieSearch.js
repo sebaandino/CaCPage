@@ -4,7 +4,7 @@ const urlParams = new URLSearchParams(window.location.search);
 // Se extrae el valor del parámetro "query"
 const query = urlParams.get('query');
 
-// Prueba del parámetro
+// Prueba
 console.log('Peli a buscar:', query);
 
 const apiKey = "8abb33cb7535fb63ffe506dd0dfe0021";
@@ -44,12 +44,10 @@ fetch(`https://api.themoviedb.org/3/search/movie?query=${query}`, options)
     })
     .catch(err => console.error(err));
 
-// Función para cargar la página HTML con la información de la película
+
 function cargarPelicula(elementoPelicula) {
-    // Obtener el ID de la película desde el atributo id del elemento de película
     const movieId = elementoPelicula.id;
-    // Construir la URL de la página HTML que muestra la información de la película
     const paginaURL = `../movie-desc/movie-desc.html?query=${movieId}`;
-    // Redireccionar a la página HTML de la película seleccionada
+    // Redirecciona
     window.location.href = paginaURL;
 }
