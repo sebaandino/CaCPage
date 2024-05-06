@@ -17,6 +17,26 @@ const options = {
     }
 };
 
+// function para buscar la traduccion de la descripcion de la pelicula 
+
+let descripcionTraducida;
+fetch(`https://api.themoviedb.org/3/movie/${query}/translations`, options)
+    .then(response => response.json())
+    .then(data => {
+        const translations = data.translations;
+        const descripcionEncontrada = translations.find(translation => translation.iso_639_1 === 'es');
+        if (descripcionEncontrada) {
+            descripcionTraducida = descripcionEncontrada.data.overview;
+        } else {
+            console.log('No se encontró una traducción en español.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
+    //carga de la pelicula
+
 fetch(`https://api.themoviedb.org/3/movie/${query}`, options)
     .then(response => response.json())
     .then(data => {
@@ -24,15 +44,16 @@ fetch(`https://api.themoviedb.org/3/movie/${query}`, options)
 
         const movie = data;
         const roundedVoteAverage = Math.round(movie.vote_average);
+        const año= movie.release_date.slice(0,4)
         const htmlResponse = /*html*/ ` 
             <img src="https://image.tmdb.org/t/p/w300/${movie.poster_path}" alt="movie poster" class="p-img">
             <div class="movie-stats">
                 <span class="p-votes"><i class="fab fa fa-star"></i>${roundedVoteAverage}/10</span><br>
-                <span class="p-date"><i class="fab fa fa-calendar"></i>${movie.release_date}</span><br>
+                <span class="p-date"><i class="fab fa fa-calendar"></i>${año}</span><br>
             </div>
             <div class="movie-info">
                 <h1 class="p-title">${movie.title}</h1>
-                <h2 class="p-desc">${movie.overview}</h2>
+                <h2 class="p-desc">${descripcionTraducida || movie.overview}</h2>
             </div>
         `;
         document.getElementById('pelicula-container').innerHTML = htmlResponse;

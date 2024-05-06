@@ -120,6 +120,76 @@ span {
     box-shadow: 0 0 5px #333;
 }
 
+/* buscador del nav */
+
+.nav-buscador-form-input {
+    border-radius: 30px;
+    padding: 5px;
+    background-color: #154970;
+    border: none;
+    transition: box-shadow .2s ease-in-out,
+        filter .2s ease-in;
+}
+
+.nav-buscador-form-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+}
+
+.nav-buscador-form-input:focus {
+    box-shadow: 2px 0 3px 2px #ffffff48;
+    filter: brightness(2);
+}
+
+.input-header {
+    display: none;
+}
+
+.label-header{
+    display: none;
+}
+
+
+@media screen and (width < 820px) {
+
+    .label-header{
+        display: block;
+    }
+    .header {
+        justify-content: space-around;
+        margin-left: 0;
+    }
+
+    .header-nav-list {
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        right: 0;
+        top: 10%;
+        gap: 30px;
+        height: auto;
+        width: 100%;
+        padding: 20px 0;
+        background-color: #ffffffc2;
+    }
+
+    .input-header:checked ~ .header-nav-list{
+        display: flex;
+    }
+
+    .nav-buscador-form-input {
+        padding: 10px;
+    }
+    
+    .nav-buscador-form-btn {
+        background-color: transparent;
+        border: none;
+        font-size: 1.3rem;
+    }
+}
+
 /*--MAIN--*/
 
 .main-container {
@@ -289,7 +359,7 @@ h2 {
     /* fin de animacion  */
 
     border-radius: 30px;
-    
+
 }
 
 /* --- animacion entrada --- */
@@ -306,7 +376,7 @@ h2 {
     }
 }
 
-.movie{
+.movie {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -322,12 +392,12 @@ h2 {
     transition: all .3s ease;
 }
 
-.card:hover img{
+.card:hover img {
     object-view-box: inset(8% 8% 8% 8%);
     filter: brightness(1.2) grayscale(50%) drop-shadow(0 0 10px black);
 }
 
-.movie-title{
+.movie-title {
     font-size: 1.1rem;
     color: #2b90dd;
     text-wrap: pretty;
@@ -366,7 +436,7 @@ footer a {
     user-select: none;
 }
 
-/* --- flip card --- 
+/* --- flip card ---
 .card_front, .card_back{
     backface-visibility: hidden;
     transition: transform .7s ease-in-out;
@@ -392,7 +462,7 @@ footer a {
 
 .card:hover .card_front{
     transform: perspective(1200px) rotateY(180deg);
-    
+
 }
 
 .card:hover .card_back{
@@ -411,5 +481,5 @@ footer a {
 
 .card_back_info span{
     font-size: 1.5rem;
-} 
+}
 */

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>G13 Movies</title>
+    <title>G13 Movies </title>
+    <link rel="import" href="header-component.html">
 </head>
 
 <body>
@@ -15,10 +16,17 @@
             <a href="index.html"><i class="fas fa fa-film"><span> G13 Movies</span></i></a>
         </div>
         <nav class="header-nav">
+            <label for="input-header" class="label-header"><i class="fa fa-bars"></i></label>
+            <input type="checkbox" name="input-header" id="input-header" class="input-header">
             <ul class="header-nav-list">
-                <li class="header-nav-list-item"><a href="movie-desc/movie-desc.html">Categorias</a></li>
-                <li class="header-nav-list-item"><a href="#">Registrarse</a></li>
-                <li class="header-nav-list-item header-nav-list-item-btn"><a href="#" role="button">Iniciar Sesión</a>
+                <li class="nav-list-item">Ultimas añadidas</li>
+                <li class="nav-list-item">Generos</li>
+                <li class="nav-list-item nav-buscador-container">
+                    <form class="nav-buscador-form" id="searchForm">
+                        <input type="text" name="query" id="buscador" placeholder="Buscar Pelicula..."
+                            class="nav-buscador-form-input">
+                        <button type="submit" class="nav-buscador-form-btn"><i class="fa fa-search"></i></button>
+                    </form>
                 </li>
             </ul>
         </nav>
@@ -32,7 +40,7 @@
         <section class="buscador-container">
             <h2 class="buscador-container-h2">¿Que estas buscando para ver hoy?</h2>
             <form class="buscador-form" id="searchForm">
-                <input type="text" name="query" id="buscadorById" placeholder="Buscar..." class="buscador-form-input">
+                <input type="text" name="query" id="buscador" placeholder="Buscar..." class="buscador-form-input">
                 <input type="submit" value="Buscar" class="buscador-form-btn">
             </form>
         </section>
@@ -44,10 +52,11 @@
         </section>
     </main>
     <footer>
-            <span>Derechos Reservados @ grupo 13</span>
-            <a href="credits/credits.html">Creditos API</a>
+        <span>Derechos Reservados @ grupo 13</span>
+        <a href="credits/credits.html">Creditos API</a>
     </footer>
     <script src="index.js"></script>
+    <script src="components/header-component/header-component.js"></script>
 </body>
 
 

@@ -42,7 +42,7 @@ document.getElementById('searchForm').addEventListener('submit', function (event
     event.preventDefault(); 
 
     //funcionalidad para el buscador de peliculas
-    const movie_string = document.getElementById("buscadorById").value;
+    const movie_string = document.getElementById("buscador").value;
     const movie_search = movie_string.replace(/\s+/g, '+'); //se remplazan los espacios del string por un +
 
     // al buscar se redirecciona a movie_search.html con el parametro de busqueda en la URL "query"
