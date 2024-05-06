@@ -261,7 +261,7 @@ h2 {
 
 /*--BUSCADOR--*/
 
-.buscador-container {
+/* .buscador-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -312,12 +312,12 @@ h2 {
 
 /* linea separadora */
 
-.line {
+/* .line {
     width: 100%;
     height: 5px;
     background-image: linear-gradient(#fff3, #fff, #fff3);
     bottom: 0;
-}
+} */ 
 
 /* seccion peliculas  */
 

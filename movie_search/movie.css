@@ -127,8 +127,9 @@ span {
     display: grid;
     place-content: center;
     margin-top: 30px;
-    font-size: clamp(.2rem,1.2rem,5rem);
+    font-size: clamp(.2rem,.8rem,5rem);
     color: white;
+    text-wrap: nowrap;
 }
 
 .title-busqueda h1 {
@@ -147,7 +148,7 @@ span {
     align-items: center;
     gap: 20px;
     padding-top: 30px;
-    margin: 50px 30px;
+    margin: 30px 30px 150px 30px;
 }
 
 .card {
