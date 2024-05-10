@@ -37,23 +37,11 @@ fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', option
     })
     .catch(err => console.error(err));
 
-    // evita que el formulario se envíe de forma tradicional
-document.getElementById('searchForm').addEventListener('submit', function (event) {
-    event.preventDefault(); 
-
-    //funcionalidad para el buscador de peliculas
-    const movie_string = document.getElementById("buscador").value;
-    const movie_search = movie_string.replace(/\s+/g, '+'); //se remplazan los espacios del string por un +
-
-    // al buscar se redirecciona a movie_search.html con el parametro de busqueda en la URL "query"
-    window.location.href = `movie_search/movie_search.html?query=${movie_search}`;
-});
-
 // Función para cargar la pagina con la descripcion de la pelicula
 function cargarPelicula(elementoPelicula) {
     // Obtencion de ID desde el elemento .card
     const movieId = elementoPelicula.id;
-    const URL = `movie-desc/movie-desc.html?query=${movieId}`;
+    const URL = `../html/movie-desc.html?query=${movieId}`;
     // se redirecciona
     window.location.href = URL;
 }

@@ -47,7 +47,7 @@ fetch(`https://api.themoviedb.org/3/search/movie?query=${query}`, options)
 
 function cargarPelicula(elementoPelicula) {
     const movieId = elementoPelicula.id;
-    const paginaURL = `../movie-desc/movie-desc.html?query=${movieId}`;
+    const paginaURL = `../html/movie-desc.html?query=${movieId}`;
     // Redirecciona
     window.location.href = paginaURL;
 }
