@@ -162,7 +162,7 @@ class headerElement extends HTMLElement {
 
             <header>
                 <div class="header-logo">
-                    <a href="../../html/index.html"><i class="fas fa fa-film"><span> G13 Movies</span></i></a>
+                    <a href="../../index.html"><i class="fas fa fa-film"><span> G13 Movies</span></i></a>
                 </div>
                 <nav class="header-nav">
                     <label for="input-header" class="label-header"><i class="fa fa-bars"></i></label>
