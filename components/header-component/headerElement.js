@@ -197,5 +197,5 @@ document.getElementById('searchForm').addEventListener('submit', function (event
     const movie_search = movie_string.replace(/\s+/g, '+'); //se remplazan los espacios del string por un +
 
     // al buscar se redirecciona a movie_search.html con el parametro de busqueda en la URL "query"
-    window.location.href = `../../html/movie_search.html?query=${movie_search}`;
+    window.location.href = `../../movie_search.html?query=${movie_search}`;
 });

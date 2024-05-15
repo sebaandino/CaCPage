@@ -41,7 +41,7 @@ fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', option
 function cargarPelicula(elementoPelicula) {
     // Obtencion de ID desde el elemento .card
     const movieId = elementoPelicula.id;
-    const URL = `../html/movie-desc.html?query=${movieId}`;
+    const URL = `movie-desc.html?query=${movieId}`;
     // se redirecciona
     window.location.href = URL;
 }
