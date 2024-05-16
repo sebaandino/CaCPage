@@ -142,6 +142,7 @@ class headerElement extends HTMLElement {
                         width: 100%;
                         padding: 20px 0;
                         background-color: #ffffffc2;
+                        z-index: 1
                     }
 
                     .input-header:checked ~ .header-nav-list {
@@ -162,7 +163,7 @@ class headerElement extends HTMLElement {
 
             <header>
                 <div class="header-logo">
-                    <a href="../../index.html"><i class="fas fa fa-film"><span> G13 Movies</span></i></a>
+                    <a href="index.html"><i class="fas fa fa-film"><span> G13 Movies</span></i></a>
                 </div>
                 <nav class="header-nav">
                     <label for="input-header" class="label-header"><i class="fa fa-bars"></i></label>

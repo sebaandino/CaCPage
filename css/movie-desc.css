@@ -37,89 +37,6 @@ body {
     background-color: #2b3236;
 }
 
-/* -- HEADER --*/
-
-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #2b90dd;
-    font-size: 1rem;
-    box-shadow: 0 1px 6px 4px #222;
-    width: 100%;
-    height: clamp(20px,10dvh,1000px);
-    padding: 0 20px 0 0px ;
-}
-
-.header-nav {
-    display: flex;
-    align-items: center;
-}
-
-.header-logo {
-    display: grid;
-    align-content: center ;
-    margin-left: 30px;
-    width: 152px;
-}
-
-.header-logo i,
-span {
-    color: #111;
-}
-
-.header-logo:hover {
-    animation: move .3s infinite;
-}
-
-@keyframes move {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(5deg);
-    }
-
-    75% {
-        transform: rotate(-5deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-.header-nav-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.header-nav-list-item {
-    padding: 5px;
-    border-radius: 15px;
-    transition: box-shadow .12s ease-in;
-}
-
-.header-nav-list-item a {
-    color: white;
-}
-
-.header-nav-list-item-btn {
-    background-color: #111;
-    border-radius: 10px;
-}
-
-.header-nav-list-item-btn:hover {
-    background-color: transparent;
-}
-
-.header-nav-list-item:hover {
-    box-shadow: 0 0 5px #333;
-}
-
 /* --- MAIN --- */
 
 .pelicula-container {
@@ -173,6 +90,8 @@ span {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: 100dvh;
+        margin: 0 20px 0 20px;
     }
 
     .movie-stats{
@@ -201,6 +120,7 @@ span {
     
 }
 
+
 /* --- FOOTER ----*/
 
 footer {
@@ -211,10 +131,11 @@ footer {
     justify-content: space-around;
     align-items: center;
     font-size: 1.3rem;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    position: absolute;
+    bottom: 0;
 }
+
 
 footer a{
     color: white;
@@ -233,3 +154,13 @@ footer a{
     color: #272727;
     user-select: none;
 }
+
+    @media screen and (width < 820px) {
+
+        footer{
+            position: relative;
+        }
+
+    } 
+        
+    
