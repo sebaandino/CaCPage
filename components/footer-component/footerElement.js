@@ -14,6 +14,7 @@ footer {
     align-items: center;
     font-size: 1.3rem;
     width: 100%;
+    position: relative;
 }
 
 footer a{
