@@ -64,6 +64,7 @@ class headerElement extends HTMLElement {
                     justify-content: center;
                     align-items: center;
                     gap: 20px;
+                    text-wrap: nowrap;
                 }
 
                 .header-nav-list-item {

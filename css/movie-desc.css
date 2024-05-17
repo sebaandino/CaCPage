@@ -83,6 +83,89 @@ body {
     text-wrap: nowrap;
 }
 
+/* -- SIMILARES -- */
+
+.title-similares {
+    display: grid;
+    place-content: center;
+    margin-top: 30px;
+    font-size: 2rem;
+}
+
+.title-similares h2 {
+    transition: border-bottom .4s ease-in-out;
+    color: white;
+}
+
+.title-similares:hover h2 {
+    border-bottom: 1px solid #2b90dd;
+}
+
+
+.similares-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 30px;
+    margin: 50px 30px;
+}
+
+.card {
+    /* animacion de entrada  */
+    position: relative;
+    animation-timeline: view;
+    animation: reveal linear both;
+    animation-range: entry 70% cover 40%;
+    view-timeline-name: --subjectReveal;
+    animation-timeline: --subjectReveal;
+    /* fin de animacion  */
+    border-radius: 30px;
+}
+
+/* --- animacion entrada --- */
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        scale: .5;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.movie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.card img {
+    height: 280px;
+    width: auto;
+    border-radius: 30px;
+    object-view-box: inset(0%);
+    transition: all .3s ease;
+}
+
+.card:hover img {
+    object-view-box: inset(8% 8% 8% 8%);
+    filter: brightness(1.2) grayscale(50%) drop-shadow(0 0 10px black);
+}
+
+.movie-title {
+    font-size: 1.1rem;
+    color: #2b90dd;
+    text-wrap: pretty;
+    text-align: center;
+}
+
 
 
 @media screen and (width < 820px){
@@ -90,8 +173,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100dvh;
-        margin: 0 20px 0 20px;
+        
     }
 
     .movie-stats{
@@ -115,6 +197,10 @@ body {
     .p-desc{
         font-size: clamp(.5rem,1rem,6rem);
         text-wrap: pretty;
+    }
+
+    .title-similares h2{
+        font-size: clamp(1rem,2rem,8rem);
     }
 
     
