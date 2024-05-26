@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: Raleway;
+}
+
+body,
+header,
+main,
+footer,
+div,
+h1,
+h2,
+h3,
+ul,
+li,
+span,
+input,
+button,
+a,
+i {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+body {
+    background-color: #2b3236;
+}
+
+/*--MAIN--*/
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    width: 100%;
+    background-image: linear-gradient(#111a, #111a), url(../img/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 1px 6px 4px #222;
+}
+
+.login-container h1,
+h2 {
+    color: white;
+}
+
+.login-container-h1 {
+    font-size: clamp(1rem, 4vw, 13rem);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.login-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-form-input {
+    width: clamp(350px, 40dvw, 1400px);
+    height: 70px;
+    border-radius: 50px;
+    font-size: x-large;
+    padding-left: 25px;
+    padding-right: 20px;
+    outline-color: #2b90dd;
+    box-shadow: 0 0 5px #222;
+}
+
+.login-form-btn {
+    width: clamp(350px, 40dvw, 1400px);
+    height: 70px;
+    border-radius: 50px;
+    font-size: x-large;
+    background-color: #2b90dd;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.register-link {
+    color: #2b90dd;
+    text-decoration: none;
+    display: block;
+    font-size: large;
+    margin-top: 30px;
+}
+
+

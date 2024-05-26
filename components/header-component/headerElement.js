@@ -73,10 +73,6 @@ class headerElement extends HTMLElement {
                     transition: box-shadow .12s ease-in;
                 }
 
-                .header-nav-list-item a {
-                    color: white;
-                }
-
                 .header-nav-list-item-btn {
                     background-color: #111;
                     border-radius: 10px;
@@ -88,6 +84,14 @@ class headerElement extends HTMLElement {
 
                 .header-nav-list-item:hover {
                     box-shadow: 0 0 5px #333;
+                }
+
+                .nav-list-item-a {
+                    color: black;
+                }
+
+                .nav-list-item-a:hover {
+                    color: #222;
                 }
 
                 /* buscador del nav */
@@ -146,6 +150,11 @@ class headerElement extends HTMLElement {
                         z-index: 1
                     }
 
+                    .nav-list-item-a {
+                        text-decoration: none;
+                        color: black;
+                    }
+
                     .input-header:checked ~ .header-nav-list {
                         display: flex;
                     }
@@ -172,6 +181,8 @@ class headerElement extends HTMLElement {
                     <ul class="header-nav-list">
                         <li class="nav-list-item">Ultimas añadidas</li>
                         <li class="nav-list-item">Generos</li>
+                        <a class="nav-list-item-a" href="register.html"><li class="nav-list-item">Registrate</li></a>
+                        <a class="nav-list-item-a" href="login.html"><li class="nav-list-item">Iniciar sesión</li></a>
                         <li class="nav-list-item nav-buscador-container">
                             <form class="nav-buscador-form" id="searchForm">
                                 <input type="text" name="query" id="buscador" placeholder="Buscar Pelicula..."
